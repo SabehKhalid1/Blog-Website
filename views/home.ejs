@@ -1,0 +1,25 @@
+<%- include('partials/header'); -%>
+
+<h1>Welcome to my Blog!</h1>
+<p>Steps to post your own blog<br>
+    1. In your browser type "/compose" and press enter to go to the compose page.<br>
+    2. Give your blog post a title and begin writing your content in the text editor provided.<br>
+    3. When you are finished, click on the "Publish" button to make your post live on the blog.<br>
+    4. Once your post is published, it will be visible on the Home page.</p>
+
+
+<%= console.log(postContent); %>
+
+<% postContent.forEach(function(post) { %>
+    <h1><%= post.title %></h1>
+    <p><%= post.content.substring(0, 100) + "..." %>
+        <a href="/posts/<%= post.title %>">Read More</a>
+        </p>
+   
+
+    <% }) %>
+
+    
+
+<%- include('partials/footer'); -%>
+
